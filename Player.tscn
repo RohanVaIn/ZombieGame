@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://burwglhji2lnl"]
+
+[ext_resource type="Script" uid="uid://bdlsprb86vn00" path="res://Player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://c5u0mp36uskwj" path="res://MC_TopDownView.png" id="2_kne1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
+radius = 13.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1974707291]
+scale = Vector2(3.035, 3.035)
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209390510]
+position = Vector2(-2.635914, 1.1920929e-07)
+shape = SubResource("CircleShape2D_44cfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=927756430]
+rotation = 1.5707964
+texture = ExtResource("2_kne1u")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2023607148]
