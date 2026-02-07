@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c15pj2npnckx0"]
+
+[ext_resource type="Texture2D" uid="uid://3cmrcb66asul" path="res://zombie.png" id="1_mauhj"]
+[ext_resource type="Script" uid="uid://i0ulx3mmwtxs" path="res://Zombie.gd" id="2_g6hu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6hu2"]
+size = Vector2(83, 95)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1742956287]
+script = ExtResource("2_g6hu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582845064]
+position = Vector2(13.5, 0.5)
+shape = SubResource("RectangleShape2D_g6hu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1101345698]
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("1_mauhj")
