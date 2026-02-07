@@ -1,17 +1,13 @@
 extends Node2D
 
-func ready():
-	spawn_zombie()
-	spawn_zombie()
-	spawn_zombie()
-	spawn_zombie()
-	spawn_zombie()
+@onready var path_follow = %PathFollow2D
+
 
 func spawn_zombie():
 	var new_zombie = preload("res://Zombie.tscn").instantiate()
-	%PathFollow2D.progress_ratio = randf()
-	new_zombie.global_position = %PathFollow2D.global_position
-
+	path_follow.progress_ratio = randf()
+	new_zombie.global_position = path_follow.global_position
+	add_child(new_zombie)
 
 func _on_timer_timeout():
 	spawn_zombie()

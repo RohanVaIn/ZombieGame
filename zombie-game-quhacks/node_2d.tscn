@@ -48,6 +48,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Timer" type="Timer" parent="." unique_id=1555816281]
 wait_time = 2.0
+autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=288667053]
 unique_name_in_owner = true
@@ -68,6 +69,22 @@ offset_top = 287.0
 offset_right = 567.0
 offset_bottom = 310.0
 text = "GAME OVER"
+
+[node name="Zombie2" parent="." unique_id=361611657 instance=ExtResource("3_epypp")]
+position = Vector2(325, 368)
+scale = Vector2(0.25, 0.25)
+
+[node name="Zombie3" parent="." unique_id=1708995087 instance=ExtResource("3_epypp")]
+position = Vector2(678, 430)
+scale = Vector2(0.25, 0.25)
+
+[node name="Zombie4" parent="." unique_id=1899247024 instance=ExtResource("3_epypp")]
+position = Vector2(692, 206)
+scale = Vector2(0.25, 0.25)
+
+[node name="Zombie5" parent="." unique_id=1722946284 instance=ExtResource("3_epypp")]
+position = Vector2(360, 246)
+scale = Vector2(0.25, 0.25)
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
