@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8a6ia3lx7ofp"]
+[gd_scene format=3 uid="uid://b8a6ia3lx7ofp"]
 
 [ext_resource type="Texture2D" uid="uid://dvibrmh15y4jy" path="res://Background_ZombieGame.png" id="1_13ucg"]
+[ext_resource type="PackedScene" uid="uid://drau8d0tsaw7v" path="res://Player.tscn" id="2_svk32"]
+[ext_resource type="PackedScene" uid="uid://exibgxxlpoap" path="res://Zombie.tscn" id="3_epypp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1458448985]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1147.0
-offset_bottom = 652.0
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=909502328]
+scale = Vector2(3, 3)
+scroll_offset = Vector2(300, 300)
+repeat_size = Vector2(300, 300)
+autoscroll = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2074030055]
+position = Vector2(158, 154)
 texture = ExtResource("1_13ucg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=129098020]
+visible = false
+offset_right = 1000.0
+offset_bottom = 1000.0
+texture = ExtResource("1_13ucg")
+
+[node name="Player" parent="." unique_id=1021659862 instance=ExtResource("2_svk32")]
+position = Vector2(508, 301)
+scale = Vector2(1, 1)
+
+[node name="Zombie" parent="." unique_id=1742956287 instance=ExtResource("3_epypp")]
+position = Vector2(573, 275)
+scale = Vector2(0.25, 0.25)

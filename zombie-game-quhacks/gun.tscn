@@ -1,21 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://blqhrxr60rd2w"]
+[gd_scene format=3 uid="uid://blqhrxr60rd2w"]
 
-[ext_resource type="Script" path="res://Gun.gd" id="1_gvkah"]
+[ext_resource type="Script" uid="uid://dih1l71fp7mup" path="res://Gun.gd" id="1_gvkah"]
 [ext_resource type="Texture2D" uid="uid://2xs8swk26v5p" path="res://Sprites/pistol.png" id="2_7g7xm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x36o8"]
-radius = 2238.05
-
-[node name="Gun" type="Area2D"]
+[node name="Gun" type="Node2D" unique_id=656640727]
 script = ExtResource("1_gvkah")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1140598266]
 
-[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
-position = Vector2(601, 0)
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D" unique_id=971861544]
+position = Vector2(517, 0)
 texture = ExtResource("2_7g7xm")
 
-[node name="ShootingPoint" type="Marker2D" parent="Marker2D/Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x36o8")
+[node name="ShootingPoint" type="Marker2D" parent="Marker2D/Sprite2D" unique_id=182940767]
+unique_name_in_owner = true

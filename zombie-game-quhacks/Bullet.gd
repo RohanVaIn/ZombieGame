@@ -1,12 +1,20 @@
 extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
+var SPEED
+var travelled_distance
+var RANGE
 func _ready():
-	pass # Replace with function body.
+	SPEED = 300
+	travelled_distance = 0
+	RANGE = 100
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
-	position += direction* 2000 * delta
+	position += direction * SPEED * delta
+	travelled_distance += SPEED * delta
+	if travelled_distance > RANGE:
+		queue_free()
+
+func _on_body_entered(body):
+	queue_free()
+	if body.has_method("take_damage"):
+		body.take_damage()

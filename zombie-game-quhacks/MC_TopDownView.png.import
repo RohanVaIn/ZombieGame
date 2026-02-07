@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba8uiynp580dw"
-path="res://.godot/imported/smg.png-172cecad99b686fe770f53da3a83c3c9.ctex"
+uid="uid://bare72p7yy6hs"
+path="res://.godot/imported/MC_TopDownView.png-0008c625d393516d506daed2bac433e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/smg.png"
-dest_files=["res://.godot/imported/smg.png-172cecad99b686fe770f53da3a83c3c9.ctex"]
+source_file="res://MC_TopDownView.png"
+dest_files=["res://.godot/imported/MC_TopDownView.png-0008c625d393516d506daed2bac433e2.ctex"]
 
 [params]
 
