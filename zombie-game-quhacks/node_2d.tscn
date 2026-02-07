@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://b8a6ia3lx7ofp"]
 
+[ext_resource type="Script" uid="uid://0dfknhxqwal7" path="res://node_2d.gd" id="1_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dvibrmh15y4jy" path="res://Background_ZombieGame.png" id="1_13ucg"]
 [ext_resource type="PackedScene" uid="uid://drau8d0tsaw7v" path="res://Player.tscn" id="2_svk32"]
 [ext_resource type="PackedScene" uid="uid://exibgxxlpoap" path="res://Zombie.tscn" id="3_epypp"]
 
+[sub_resource type="Curve2D" id="Curve2D_q6r6c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -137.39702, -80.39538, 0, 0, 0, 0, 134.43163, -81.71333, 0, 0, 0, 0, 139.70345, 78.08895, 0, 0, 0, 0, -141.02141, 85.337715, 0, 0, 0, 0, -137.06754, -82.04282)
+}
+point_count = 5
+
 [node name="Node2D" type="Node2D" unique_id=1458448985]
+script = ExtResource("1_0hol4")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=909502328]
 scale = Vector2(3, 3)
@@ -26,6 +34,40 @@ texture = ExtResource("1_13ucg")
 position = Vector2(508, 301)
 scale = Vector2(1, 1)
 
+[node name="Path2D" type="Path2D" parent="Player" unique_id=395328851]
+curve = SubResource("Curve2D_q6r6c")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=25206848]
+unique_name_in_owner = true
+position = Vector2(-137.39702, -80.39538)
+rotation = -0.0048484397
+
 [node name="Zombie" parent="." unique_id=1742956287 instance=ExtResource("3_epypp")]
 position = Vector2(573, 275)
 scale = Vector2(0.25, 0.25)
+
+[node name="Timer" type="Timer" parent="." unique_id=1555816281]
+wait_time = 2.0
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=288667053]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=997008168]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=223880188]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 287.0
+offset_right = 567.0
+offset_bottom = 310.0
+text = "GAME OVER"
+
+[connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

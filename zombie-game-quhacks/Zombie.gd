@@ -14,3 +14,7 @@ func take_damage():
 	HEALTH -= 1
 	if HEALTH == 0:
 		queue_free()
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("hit"):
+		body.hit()
