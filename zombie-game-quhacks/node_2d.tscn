@@ -1,30 +1,10 @@
-[gd_scene format=3 uid="uid://b8a6ia3lx7ofp"]
+[gd_scene load_steps=2 format=3 uid="uid://b8a6ia3lx7ofp"]
 
-[ext_resource type="Texture2D" uid="uid://dhhqb7fsqc3nl" path="res://Sprites/shotgun.png" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://2xs8swk26v5p" path="res://Sprites/pistol.png" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://d1lmlb3aj2ugs" path="res://Sprites/rifle.png" id="3_epypp"]
-[ext_resource type="Texture2D" uid="uid://ba8uiynp580dw" path="res://smg.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dvibrmh15y4jy" path="res://Background_ZombieGame.png" id="1_13ucg"]
 
-[node name="Node2D" type="Node2D" unique_id=1703296360]
+[node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1307104917]
-
-[node name="Shotgun" type="Sprite2D" parent="." unique_id=1960552288]
-position = Vector2(828, 524)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_0e48y")
-
-[node name="Pistol" type="Sprite2D" parent="." unique_id=590546438]
-position = Vector2(780.99994, 416.99997)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_epypp")
-
-[node name="Rifle" type="Sprite2D" parent="." unique_id=943212914]
-position = Vector2(819, 481)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_epypp")
-
-[node name="Smg" type="Sprite2D" parent="." unique_id=1919557478]
-position = Vector2(825, 430)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_0hol4")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1147.0
+offset_bottom = 652.0
+texture = ExtResource("1_13ucg")
